@@ -14,7 +14,7 @@ export const ColumnFilter: React.FC<ColumnFilterProps> = ({column}) => {
     <div>
       <span>
         Search: {' '}
-        <input value={filterValue || ''} onChange={(e) => setFilter(e.target.value)} />
+        <input value={filterValue || ' '} onChange={(e) => setFilter(e.target.value)} />
       </span>
     </div>
   );
