@@ -1,4 +1,3 @@
-import { ColumnFilter } from "./ColumnFilter";
 
 
   export const COLUMNS = [
@@ -6,53 +5,48 @@ import { ColumnFilter } from "./ColumnFilter";
         Header: "Key",
         Footer: "Id",
         accessor: "key",
-        Filter: ColumnFilter
+        disableFilter: true
     },
     {
         Header: "Page",
         Footer: "Page",
         accessor: "page",
-        Filter: ColumnFilter
 
     },
     {
         Header: "Image",
         Footer: "Image",
         accessor: "img",
-
+        disableFilter: true
     },
     {
         Header: "Thumb",
         Footer: "Thumb",
         accessor: "thumb",
-
+        disableFilter: true
     },
     {
         Header: "Play Time",
         Footer: "Play Time",
         accessor: "playingTime",
-        Filter: ColumnFilter
 
     },
     {
         Header: "Type",
         Footer: "Type",
         accessor: "type",
-        Filter: ColumnFilter
 
     },
     {
         Header: "Brand",
         Footer: "Brand",
         accessor: "brand",
-        Filter: ColumnFilter
 
     },
     {
         Header: "Color",
         Footer: "Color",
         accessor: "color",
-        Filter: ColumnFilter
 
     },
 ];

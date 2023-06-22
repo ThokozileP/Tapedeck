@@ -3,6 +3,7 @@ import { useTable,  useGlobalFilter, useFilters, useSortBy } from 'react-table'
 import { GlobalFilter } from './GlobalFilter';
 import { COLUMNS} from "./Columns";
 import "./Table.css";
+import { ColumnFilter } from './ColumnFilter';
 
 interface Tape {
     page: string;
@@ -128,32 +129,20 @@ const TapeDeck: React.FC = () => {
         fetchTapes();
     }, [tapes]);
 
-
-        /*useEffect(() => {
-            const fetchTapes = async () => {
-                try {
-                    const response = await fetch('/tapes.json'); // Relative path to the JSON file
-                    const data = await response.json();
-                    console.log('Returned data: ',data)
-                    setTapes(data);
-                } catch (error) {
-                    console.error('Failed to fetch tapes:', error);
-                }
-            };
-
-            fetchTapes();
-        }, []);*/
-
-    // @ts-ignore
-    const columns = useMemo(() => COLUMNS, []);
+  const columns = useMemo(() => COLUMNS, []);
   const data: any = useMemo(() => tapesFormated, [tapesFormated]);
+  const defaultColumns = useMemo(() => {
+    return {
+      Filter: ColumnFilter
+    }
+  },[]);
 
-  
 
   const { getTableProps, getTableBodyProps, headerGroups, footerGroups, rows, prepareRow, state, setGlobalFilter } =
   useTable({
     columns,
     data,
+    defaultColumns
   }, useFilters, useGlobalFilter, useSortBy)
 
  const {globalFilter} = state 
@@ -167,9 +156,9 @@ const TapeDeck: React.FC = () => {
             {headerGroup.headers.map((column) => (
               <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render("Header")}
-                <div>
+                {/* <div>
                   {column.canFilter ? column.render("Filter") :null}
-                </div>
+                </div> */}
                 <span>
                 {column.isSorted ? (column as any).isSortedDesc ? " 🔽" : " 🔼" : ''}
                 </span>
