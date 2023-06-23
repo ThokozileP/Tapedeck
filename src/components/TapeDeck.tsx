@@ -61,9 +61,10 @@ const TapeDeck: React.FC = () => {
           });
 
           const objects = sortedValues.map((tape: { [x: string]: any }) => {
-            let page = "";
-            let img = "";
-            let thumb = "";
+            let page = undefined;
+            let pageUrl = "";
+            let img = undefined;
+            let thumb = undefined;
             let playingTime = "";
             let type = "";
             let color = "";
@@ -71,11 +72,15 @@ const TapeDeck: React.FC = () => {
 
             tape.forEach((element: any) => {
               if (element.hasOwnProperty("page")) {
-                page = element.page;
+                const pagePath = element.page
+                pageUrl = pagePath
+                page = <a href={pagePath}>Link</a>
               } else if (element.hasOwnProperty("img")) {
-                img = element.img;
+                const imagePath = element.img;
+                img = <img src={imagePath} alt="" />;
               } else if (element.hasOwnProperty("thumb")) {
-                thumb = element.thumb;
+                const thumbPath = element.thumb;
+                thumb = <a href={pageUrl}><img src={thumbPath} alt="" /></a>;
               } else if (element.hasOwnProperty("playingTime")) {
                 playingTime = element.playingTime;
               } else if (element.hasOwnProperty("type")) {
@@ -154,7 +159,9 @@ const TapeDeck: React.FC = () => {
   const { globalFilter, pageIndex, pageSize } = state;
   return (
     <>
+    <div className="globalFilter">
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+    </div>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -162,13 +169,13 @@ const TapeDeck: React.FC = () => {
               {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
-                  <span>
+                  <button>
                     {column.isSorted
                       ? (column as any).isSortedDesc
                         ? " 🔽"
                         : " 🔼"
                       : ""}
-                  </span>
+                  </button>
                   <div>{column.canFilter ? column.render("Filter") : null}</div>
                 </th>
               ))}
@@ -191,12 +198,12 @@ const TapeDeck: React.FC = () => {
         </tbody>
       </table>
 
-      <div>
+      <div className="pagination">
         <span>
           Page{" "}
           <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{" "}
+            { pageIndex + 1 } of { pageOptions.length }
+          </strong>{"  "}
         </span>
         <span>
           | Go to page:{" "}
@@ -217,8 +224,8 @@ const TapeDeck: React.FC = () => {
           onChange={(e) => setPageSize(Number(e.target.value))}
         >
           {[10, 25, 50, 100].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
+            <option key={pageSize} value={ pageSize }>
+              Show { pageSize }
             </option>
           ))}
         </select>

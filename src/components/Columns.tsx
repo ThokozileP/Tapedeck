@@ -13,11 +13,11 @@ interface Column {
         disableFilters: true
 
     },
-    {
-        Header: "Image",
-        accessor: "img",
-        disableFilters: true
-    },
+    // {
+    //     Header: "Image",
+    //     accessor: "img",
+    //     disableFilters: true,
+    // },
     {
         Header: "Thumb",
         accessor: "thumb",
