@@ -148,7 +148,7 @@ const TapeDeck: React.FC = () => {
       columns,
       data,
       defaultColumn,
-      initialState: { pageIndex: 0 },
+      initialState: { pageIndex: 0 , pageSize: 5},
     },
     useFilters,
     useGlobalFilter,
@@ -223,7 +223,7 @@ const TapeDeck: React.FC = () => {
           value={pageSize}
           onChange={(e) => setPageSize(Number(e.target.value))}
         >
-          {[10, 25, 50, 100].map((pageSize) => (
+          {[5, 10, 25, 50, 100].map((pageSize) => (
             <option key={pageSize} value={ pageSize }>
               Show { pageSize }
             </option>
