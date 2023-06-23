@@ -1,5 +1,5 @@
 import React from 'react';
-import TapeDeck from './components/fetchData'
+import TapeDeck from './components/TapeDeck'
 import './App.css';
 
 const App: React.FC = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ColumnFilterProps {
   column: {
@@ -7,16 +7,16 @@ interface ColumnFilterProps {
   };
 }
 
-export const ColumnFilter: React.FC<ColumnFilterProps> = ({column}) => {
-  const {filterValue, setFilter} = column;
-  
+export const ColumnFilter: React.FC<ColumnFilterProps> = ({ column }) => {
+  const { filterValue, setFilter } = column;
+
   return (
     <div>
-      <span>
-        Search: {' '}
-        <input value={filterValue || ' '} onChange={(e) => setFilter(e.target.value)} />
-      </span>
+      Search:{" "}
+      <input
+        value={filterValue || ""}
+        onChange={(e) => setFilter(e.target.value)}
+      />
     </div>
   );
-}
-
+};
