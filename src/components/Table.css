@@ -21,3 +21,15 @@ table th, tfoot td {
   background-color: #04AA6D;
   color: white;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.globalFilter {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: right;
+  font-weight: 400;
+}

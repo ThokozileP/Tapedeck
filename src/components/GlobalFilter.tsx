@@ -9,7 +9,8 @@ export const GlobalFilter: React.FC<Props> = ({ filter, setFilter }) => {
   return (
     <div>
       <span>
-        Search:{" "}
+        <strong>Search:</strong>
+        {" "}
         <input
           value={filter || ""}
           onChange={(e) => setFilter(e.target.value)}
