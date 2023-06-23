@@ -1,44 +1,50 @@
 
+interface Column {
+    Header: string;
+    accessor: string;
+    disableFilters?: boolean;
+  }
 
-  export const COLUMNS = [
-    {
-        Header: "Id",
-        accessor: "id",
-        disableFilter: true
-    },
+  export const COLUMNS: Column[] = [
+   
     {
         Header: "Page",
         accessor: "page",
+        disableFilters: true
 
     },
     {
         Header: "Image",
         accessor: "img",
-        disableFilter: true
+        disableFilters: true
     },
     {
         Header: "Thumb",
         accessor: "thumb",
-        disableFilter: true
+        disableFilters: true
     },
     {
         Header: "Play Time",
         accessor: "playingTime",
+        disableFilters: false
 
     },
     {
         Header: "Type",
         accessor: "type",
+        disableFilters: false
 
     },
     {
         Header: "Brand",
         accessor: "brand",
+        disableFilters: false
 
     },
     {
         Header: "Color",
         accessor: "color",
+        disableFilters: false
 
     },
 ];
