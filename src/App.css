@@ -1,4 +1,18 @@
 .App {
   font-family: sans-serif;
-  text-align: left;
+  text-align: center;
+  font-size: medium;
+  padding: 10px;
+}
+h1 {
+  padding-top: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+header {
+  width: auto;
+  height: 80px;
+  background-color: #035421;
+  align-content: center;
 }

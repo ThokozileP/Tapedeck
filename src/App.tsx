@@ -5,6 +5,10 @@ import './App.css';
 const App: React.FC = () => {
 return (
   <div className="App">
+    <header>
+    <h1>Welcome to Tapedeck</h1>
+    </header>
+    
    <TapeDeck/>
   </div>
 );
