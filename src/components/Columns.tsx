@@ -3,6 +3,7 @@ interface Column {
     Header: string;
     accessor: string;
     disableFilters?: boolean;
+    disableSortBy?: boolean;
   }
 
   export const COLUMNS: Column[] = [
@@ -26,13 +27,16 @@ interface Column {
     {
         Header: "Play Time",
         accessor: "playingTime",
-        disableFilters: false
+        disableFilters: false,
+        disableSortBy: true
 
     },
     {
         Header: "Type",
         accessor: "type",
-        disableFilters: false
+        disableFilters: false,
+        disableSortBy: true
+        
 
     },
     {
@@ -44,7 +48,9 @@ interface Column {
     {
         Header: "Color",
         accessor: "color",
-        disableFilters: false
+        disableFilters: false,
+        disableSortBy: true
+
 
     },
 ];

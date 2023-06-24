@@ -25,11 +25,12 @@ table th, tfoot td {
   display: flex;
   justify-content: center;
   margin-top: 16px;
+  font-weight: 500;
 }
 
 .globalFilter {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
-  text-align: right;
+  text-align: left;
   font-weight: 400;
 }

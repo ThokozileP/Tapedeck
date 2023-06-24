@@ -169,13 +169,13 @@ const TapeDeck: React.FC = () => {
               {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
-                  <button>
+                  <span>
                     {column.isSorted
                       ? (column as any).isSortedDesc
                         ? " 🔽"
                         : " 🔼"
                       : ""}
-                  </button>
+                  </span>
                   <div>{column.canFilter ? column.render("Filter") : null}</div>
                 </th>
               ))}
