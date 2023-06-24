@@ -40,11 +40,21 @@ To deploy the application using Docker, you can follow these steps:
    ```
 
    docker buildx build --platform linux/amd64 -t leeyadh/tapedeck:1.0.2 .
+   docker run -p 3000:3000 -d leeyadh/tapedeck:1.0.2
 
    ```
 
+### App URL:
 
+`https://tapedeck-2lcvmh74rq-ez.a.run.app/`
 
-App URL:
+The app is best viewed using Safari and Firefox as the browsers of reference. This is because, the current SSL certificate for `https://www.tapedeck.org`  is expired and might require you to manually give permission to access the images. 
 
-https://tapedeck-2lcvmh74rq-ez.a.run.app/
+Follow the steps above allows you to manually access the images
+
+1. Copy the URL of the image you want to access, for example: `https://www.tapedeck.org/400/3m_avx30_080417-thumb.jpg`.
+2. Open a new tab in the Chrome browser and paste the image URL into the address bar.
+3. Press Enter to load the page. Chrome will display a warning message indicating that the site's certificate is invalid.
+4. Click on the "Advanced" button on the warning page. It will expand additional options.
+5. Look for the "Proceed to [www.tapedeck.org](http://www.tapedeck.org/) (unsafe)" link or a similar option. Click on this link to proceed to the website.
+6. After granting permission, the image should load in your browser, and you will be able to view it.
