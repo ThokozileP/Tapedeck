@@ -102,8 +102,8 @@ const TapeDeck: React.FC = () => {
               brand: brand,
             };
           });
-
-          setTapesFormated(objects);
+          const sortByBrand = [...objects].sort((a, b) => a.brand.localeCompare(b.brand));
+          setTapesFormated(sortByBrand);
         } else {
           console.error(
             "Failed to fetch tapes:",
