@@ -13,7 +13,7 @@ interface Tape {
 export const useApiGet = (url: string) => {
     const [tapesFormated, setTapesFormated] = useState<Tape[]>([]);
 
-   const API_KEY = "QXJlIHlvdSBvdXIgbmV3IGZyb250LWVuZCBzb2Z0d2FyZSBlbmdpbmVlciwgVGhva296aWxlPw=="
+   const API_KEY = `${process.env.REACT_APP_TAPEDECK_API_KEY}`
 
   useEffect(() => {
     const fetchTapes = async () => {
@@ -27,6 +27,7 @@ export const useApiGet = (url: string) => {
 
         if (response.ok) {
           const data = await response.json();
+          //remove the string key from the response
           const sortedValues = data.map((tape: { [x: string]: any }) => {
             const tapeKey = Object.keys(tape);
 
@@ -34,7 +35,8 @@ export const useApiGet = (url: string) => {
 
             return tapeData;
           });
-
+          // create tape objects from the array values
+          // this can also be mapped straight from the array values above
           const objects = sortedValues.map((tape: { [x: string]: any }) => {
             let page = undefined;
             let pageUrl = "";
@@ -92,7 +94,7 @@ export const useApiGet = (url: string) => {
     };
 
     fetchTapes();
-  }, [url]);
+  }, [API_KEY, url]);
 
   return tapesFormated;
 }

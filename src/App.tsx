@@ -2,6 +2,8 @@ import React from 'react';
 import TapeDeck from './components/TapeDeck'
 import './App.css';
 
+// require('dotenv').config()
+
 const App: React.FC = () => {
 return (
   <div className="App">
