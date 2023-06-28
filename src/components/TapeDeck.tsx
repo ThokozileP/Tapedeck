@@ -11,10 +11,12 @@ import { COLUMNS } from "./Columns";
 import "./Table.css";
 import { ColumnFilter } from "./ColumnFilter";
 import {useApiGet} from "../services/tapedeck.service"
+import {composeEndpoint} from "../utilities/endpoint"
+
 
 const TapeDeck: React.FC = () => {
   const columns = useMemo(() => COLUMNS, []);
-  const apiUrl = "https://tapedeck-api.vercel.app/api";
+  const apiUrl = composeEndpoint();
   const data: any = useApiGet(apiUrl)
 
   const defaultColumn: any = useMemo(() => {
