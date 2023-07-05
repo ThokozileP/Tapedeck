@@ -10,15 +10,13 @@ import { GlobalFilter } from "./GlobalFilter";
 import { COLUMNS } from "./Columns";
 import "./Table.css";
 import { ColumnFilter } from "./ColumnFilter";
-import {useApiGet} from "../services/tapedeck.service"
-import {composeEndpoint} from "../utilities/endpoint"
-
+import { useApiGet} from "../services/tapedeck.service";
+import { composeEndpoint } from "../utilities/endpoint";
 
 const TapeDeck: React.FC = () => {
   const columns = useMemo(() => COLUMNS, []);
   const apiUrl = composeEndpoint();
-  const data: any = useApiGet(apiUrl)
-
+  const data: any = useApiGet(apiUrl);
   const defaultColumn: any = useMemo(() => {
     return {
       Filter: ColumnFilter,
@@ -46,7 +44,7 @@ const TapeDeck: React.FC = () => {
       columns,
       data,
       defaultColumn,
-      initialState: { pageIndex: 0 , pageSize: 5},
+      initialState: { pageIndex: 0, pageSize: 5 },
     },
     useFilters,
     useGlobalFilter,
@@ -57,9 +55,9 @@ const TapeDeck: React.FC = () => {
   const { globalFilter, pageIndex, pageSize } = state;
   return (
     <>
-    <div className="globalFilter">
-      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
-    </div>
+      <div className="globalFilter">
+        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+      </div>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -100,8 +98,9 @@ const TapeDeck: React.FC = () => {
         <span>
           Page{" "}
           <strong>
-            { pageIndex + 1 } of { pageOptions.length }
-          </strong>{"  "}
+            {pageIndex + 1} of {pageOptions.length}
+          </strong>
+          {"  "}
         </span>
         <span>
           | Go to page:{" "}
@@ -122,8 +121,8 @@ const TapeDeck: React.FC = () => {
           onChange={(e) => setPageSize(Number(e.target.value))}
         >
           {[5, 10, 25, 50, 100].map((pageSize) => (
-            <option key={pageSize} value={ pageSize }>
-              Show { pageSize }
+            <option key={pageSize} value={pageSize}>
+              Show {pageSize}
             </option>
           ))}
         </select>
