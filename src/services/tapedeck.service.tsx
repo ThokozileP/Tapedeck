@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 import { useEffect, useState } from "react";
 
 interface Tape {
@@ -25,16 +26,11 @@ export const useApiGet = (url: string) => {
 
         if (response.ok) {
           const data = await response.json();
-          //remove the string key from the response
           const mappedValues = data.map((tape: { [x: string]: any }) => {
             const tapeKey = Object.keys(tape);
-
             const tapeData = tape[tapeKey[0]];
-
             return tapeData;
           });
-          // create tape objects from the array values
-          // this can also be mapped straight from the array values above
           const objects = mappedValues.map((tape: { [x: string]: any }) => {
             let page = undefined;
             let pageUrl = "";

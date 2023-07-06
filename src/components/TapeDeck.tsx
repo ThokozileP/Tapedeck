@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useMemo } from "react";
 import {
   useTable,
@@ -10,7 +12,7 @@ import { GlobalFilter } from "./GlobalFilter";
 import { COLUMNS } from "./Columns";
 import "./Table.css";
 import { ColumnFilter } from "./ColumnFilter";
-import { useApiGet} from "../services/tapedeck.service";
+import { useApiGet } from "../services/tapedeck.service";
 import { composeEndpoint } from "../utilities/endpoint";
 
 const TapeDeck: React.FC = () => {
@@ -83,11 +85,9 @@ const TapeDeck: React.FC = () => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
+                {row.cells.map((cell) => (
+                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                ))}
               </tr>
             );
           })}

@@ -1,4 +1,3 @@
-
 interface Column {
     Header: string;
     accessor: string;
@@ -12,13 +11,7 @@ interface Column {
         Header: "Page",
         accessor: "page",
         disableFilters: true
-
     },
-    // {
-    //     Header: "Image",
-    //     accessor: "img",
-    //     disableFilters: true,
-    // },
     {
         Header: "Thumb",
         accessor: "thumb",
@@ -29,29 +22,23 @@ interface Column {
         accessor: "playingTime",
         disableFilters: false,
         disableSortBy: true
-
     },
     {
         Header: "Type",
         accessor: "type",
         disableFilters: false,
         disableSortBy: true
-        
-
     },
     {
         Header: "Brand",
         accessor: "brand",
         disableFilters: false
-
     },
     {
         Header: "Color",
         accessor: "color",
         disableFilters: false,
         disableSortBy: true
-
-
     },
 ];
 
