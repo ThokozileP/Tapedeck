@@ -39,8 +39,8 @@ To deploy the application using Docker, you can follow these steps:
 1. run
    ```
 
-   docker buildx build --platform linux/amd64 -t leeyadh/tapedeck:1.0.2 .
-   docker run -p 3000:3000 -d leeyadh/tapedeck:1.0.2
+   docker buildx build --platform linux/amd64 -t leeyadh/tapedeck:latest .
+   docker run -p 3000:3000 -d leeyadh/tapedeck:latest
 
    ```
 
@@ -48,7 +48,7 @@ To deploy the application using Docker, you can follow these steps:
 
 `https://tapedeck-2lcvmh74rq-ez.a.run.app/`
 
-The app is best viewed using Safari and Firefox as the browsers of reference. This is because, the current SSL certificate for `https://www.tapedeck.org`  is expired and might require you to manually give permission to access the images. 
+The app is best viewed using Safari and Firefox as the browsers of reference. This is because, the current SSL certificate for `https://www.tapedeck.org`  is expired and might require you to manually give permission to access the images.
 
 Follow the steps above allows you to manually access the images
 
